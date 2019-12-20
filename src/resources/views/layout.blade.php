@@ -18,6 +18,11 @@
                 HMRS
             </a>
         </div>
+        <div class="mb-4">
+        <a href="{{ route('post.create') }}" class="btn btn-primary">
+        投稿を新規作成する
+    </a>
+</div>
     </header>
 
     <div>

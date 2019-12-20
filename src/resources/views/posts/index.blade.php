@@ -6,14 +6,15 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <label>社員ID : </label>{{ $post->id }}
-                </div>
-                <div class="card-body">
+                    </div>
+                    <div class="card-body">
                     <p class="card-text">
                         <label>社員番号 : </label>{!! nl2br(e($post->e_number)) !!}
                     </p>
                     <p class="card-text">
                         <label>氏名 : </label>{!! nl2br(e($post->name)) !!}
                     </p>
+                    <!-- 小テーブルから持ってくる -->
                     <p class="card-text">
                         <label>部署名 : </label>{!! nl2br(e($post->department_id)) !!}
                     </p>
@@ -21,10 +22,10 @@
                     <p class="card-text">
                         <label>性別 : </label>{!! nl2br(e($post->gender)) !!}
                     </p>
+                    </div>
+                    <div class="card-footer">
+                    </div>
                 </div>
-                <div class="card-footer">
-                </div>
-            </div>
         @endforeach
     </div>
 @endsection

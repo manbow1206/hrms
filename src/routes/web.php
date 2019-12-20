@@ -17,4 +17,6 @@
 
 Route::get('/', 'PostController@index')->name('top');
 
+Route::resource('post', 'PostController',['only' => ['create', 'store']]);
+
 Route::get('/hello', 'HelloController@index');
