@@ -52,10 +52,10 @@
                         <div class="cp_ipselect cp_sl01">
                         <select required>
                           <option value="" hidden>Choose</option>
-                          <option value="1">cat</option>
-                          <option value="2">dog</option>
-                          <option value="3">rabbit</option>
-                          <option value="4">squirrel</option>
+                          <option value="1">テクノロジー本部</option>
+                          <option value="2">CEO Office</option>
+                          <option value="3">バンカーサポート</option>
+                          <option value="4"></option>
                         </select>
                         </div>
                         @if ($errors->has('title'))
@@ -69,13 +69,25 @@
                       <label for="title">
                             性別
                         </label>
-                        <input
-                            id="title"
-                            name="title"
-                            class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"
-                            value="{{ old('title') }}"
-                            type="text"
-                        >
+                        <div class="container">
+                        <div class="alert">
+<!-- <div class="container"> -->
+  <ul>
+  <li>
+    <input type="radio" id="f-option" name="selector">
+    <label for="f-option">男性</label>
+    <div class="check"></div>
+  </li>
+  <li>
+    <input type="radio" id="s-option" name="selector">
+    <label for="s-option">女性</label>
+    <div class="check"><div class="inside"></div></div>
+  </li>
+</ul>
+<!-- </div> -->
+
+
+
                         @if ($errors->has('title'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('title') }}
