@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/fronttest', function () {
+  return view('fronttest');
+});
 
 Route::get('/', 'PostController@index')->name('top');
 

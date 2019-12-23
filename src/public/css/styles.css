@@ -56,10 +56,9 @@ body, html{
 .container{
   display: block;
   position: relative;
-  margin: 5px ;
   height: auto;
   width: 500px;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 h2 {
