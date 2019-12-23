@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <div class="border p-4">
         <h1 class="h5 mb-4">
-            社員登録ページ
+            <label>社員登録ページ</label>
         </h1>
         <form method="POST" action="{{ route('post.store') }}">
             @csrf
@@ -37,7 +37,8 @@
                             <option value="1">テクノロジー本部</option>
                             <option value="2">CEO Office</option>
                             <option value="3">バンカーサポート</option>
-                            <option value="4"></option>
+                            <option value="4">管理本部</option>
+                            <option value="5">メディア部</option>
                         </select>
                     </div>
                     <!-- @if ($errors->has('title'))
@@ -50,8 +51,8 @@
                 <div class="form-group">
                     <label for="title">性別</label>
                     <div class="container">
-                        <input type="radio" name="gender" name="man" value="1">男性
-                        <input type="radio" name="gender" name="female" value="0">女性
+                        <label><input type="radio" name="gender" name="man" value="1">男性</label>
+                        <label><input type="radio" name="gender" name="female" value="0">女性</label>
 
                         <!-- <div class="alert">
                             <ul>

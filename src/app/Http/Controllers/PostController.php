@@ -40,4 +40,30 @@ class PostController extends Controller
 
         return redirect()->route('top');
     }
+
+    //  従業員のidと部署idが一緒の場合の
+    public function show($id)
+    {
+        $employee = Employee::findOrFail($id);
+
+        return view('posts.show', [
+            'employee' => $employee,
+        ]);
+    }
+
+    // public function edit($id)
+    // {
+    //     $employee = Employee::findOrFail($id);
+    //     return view('posts.edit', [
+    //         'employee' => $employee,
+    //     ]);
+    // }
+
+    // public function update($id, Request $request)
+    // {
+    //     $employee = Employee::findOrFail($id);
+    //     $employee->save();
+
+    //     return redirect()->route('posts.show', ['employee' => $employee]);
+    // }
 }
