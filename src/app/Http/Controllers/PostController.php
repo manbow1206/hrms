@@ -70,4 +70,14 @@ class PostController extends Controller
         $employees->save();
         return redirect()->route('post.show', ['employees' => $employees]);
     }
+
+    public function destroy($id)
+    {
+        $employees = Employee::findOrFail($id);
+        \DB::transaction(function () use ($employees) {
+            $employees->delete();
+        });
+
+        return redirect()->route('top');
+    }
 }

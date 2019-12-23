@@ -54,6 +54,11 @@
         編集する
       </a>
     </div>
+    <form style="display: inline-block;" method="POST" action="{{ route('post.destroy', ['employees' => $employees]) }}">
+      @csrf
+      @method('DELETE')
+      <button class="btn btn-danger">削除する</button>
+    </form>
   </div>
 </div>
 @endsection
