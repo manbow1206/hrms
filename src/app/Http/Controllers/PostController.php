@@ -9,9 +9,9 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts =  Employee::orderBy('created_at', 'desc')->get();
+        $employees =  Employee::orderBy('created_at', 'desc')->get();
         // $d_name = Employee::find(1)->departments;
-        return view('posts.index', compact('posts'));
+        return view('posts.index', compact('employees'));
     }
 
     public function create()
@@ -44,26 +44,30 @@ class PostController extends Controller
     //  従業員のidと部署idが一緒の場合の
     public function show($id)
     {
-        $employee = Employee::findOrFail($id);
+        $employees = Employee::findOrFail($id);
 
         return view('posts.show', [
-            'employee' => $employee,
+            'employees' => $employees,
         ]);
     }
 
-    // public function edit($id)
-    // {
-    //     $employee = Employee::findOrFail($id);
-    //     return view('posts.edit', [
-    //         'employee' => $employee,
-    //     ]);
-    // }
+    public function edit($id)
+    {
+        $employees = Employee::findOrFail($id);
+        return view('posts.edit', [
+            'employees' => $employees,
+        ]);
+    }
 
-    // public function update($id, Request $request)
-    // {
-    //     $employee = Employee::findOrFail($id);
-    //     $employee->save();
+    public function update($id, Request $request)
+    {
+        $employees = Employee::findOrFail($id);
 
-    //     return redirect()->route('posts.show', ['employee' => $employee]);
-    // }
+        $employees->e_number  = $request->e_number;
+        $employees->name = $request->name;
+        $employees->gender  = $request->gender;
+        $employees->department_id  = $request->department;
+        $employees->save();
+        return redirect()->route('post.show', ['employees' => $employees]);
+    }
 }

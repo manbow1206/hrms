@@ -10,27 +10,27 @@
             @csrf
             <fieldset class="mb-4">
                 <div class="form-group">
-                    <label for="title">社員番号</label>
-                    <input id="title" name="e_number" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text">
-                    <!-- @if ($errors->has('title'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('title') }}
-                            </div>
-                        @endif -->
+                    <label for="name">社員番号</label>
+                    <input id="name" name="e_number" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text">
+                    @if ($errors->has('name'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('name') }}
+                    </div>
+                    @endif
                 </div>
 
                 <div class="form-group">
-                    <label for="title">氏名</label>
-                    <input id="title" name="name" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}" type="text">
-                    <!-- @if ($errors->has('title'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('title') }}
-                            </div>
-                        @endif -->
+                    <label for="name">氏名</label>
+                    <input id="name" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}" type="text">
+                    @if ($errors->has('name'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('name') }}
+                    </div>
+                    @endif
                 </div>
 
                 <div class="form-group">
-                    <label for="title">部署名</label>
+                    <label for="name">部署名</label>
                     <div class="cp_ipselect cp_sl01">
                         <select required name="department">
                             <option value="" hidden>Choose</option>
@@ -41,20 +41,22 @@
                             <option value="5">メディア部</option>
                         </select>
                     </div>
-                    <!-- @if ($errors->has('title'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('title') }}
-                            </div>
-                        @endif -->
+                    @if ($errors->has('name'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('name') }}
+                    </div>
+                    @endif
                 </div>
 
                 <div class="form-group">
-                    <label for="title">性別</label>
+                    <label for="name">性別</label>
                     <div class="container">
                         <label><input type="radio" name="gender" name="man" value="1">男性</label>
                         <label><input type="radio" name="gender" name="female" value="0">女性</label>
+                    </div>
+                </div>
 
-                        <!-- <div class="alert">
+                <!-- <div class="alert">
                             <ul>
                                 <li>
                                     <input type="radio" id="f-option" name="gender">
@@ -75,8 +77,7 @@
                                 </div>
                                 @endif
                         </div> -->
-                    </div>
-                </div>
+
 
                 <div class="mt-5">
                     <a class="btn btn-secondary" href="{{ route('top') }}">キャンセル</a>
