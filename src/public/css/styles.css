@@ -1,3 +1,7 @@
+* {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  }  
+
 .cp_ipselect {
 	overflow: hidden;
 	width: 90%;
@@ -253,3 +257,20 @@ label:after {
 .letter-color{
 	color:	#0cb0e0;
 }
+
+th {
+  color:black;
+}
+
+td {
+  color:black;
+}
+
+.margine {
+  margin-top: 20px;
+}
+
+.iyell-logo{
+  font-size: 50px;
+}
+
